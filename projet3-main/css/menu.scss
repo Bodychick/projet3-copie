@@ -1,0 +1,345 @@
+$main_font:'Shrikhand',sans-serif;
+$second_font:'Roboto',sans-serif;
+$primary_color:#9356DC;
+$second_color:#FF79DA;
+$third_color:#99E2D0;
+$input-size:1.2rem;
+$back-grey: #e5e5e5bd;
+$boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
+
+@mixin box-shadow($x, $y,$spread, $blur, $c){ 
+    -webkit-box-shadow: $x $y $spread $blur $c;
+    -moz-box-shadow: $x $y $spread $blur $c;
+    -ms-box-shadow: $x $y $spread $blur $c;
+    box-shadow: $x $y $spread $blur $c;
+ }
+
+ @mixin box-shadow2(){
+    box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
+ }
+ @mixin box-shadow-noir(){
+    box-shadow: 5px 5px 5px #b4b3b3, -5px 5px 5px #b4b3b3;
+ }
+
+ @mixin flexbox-row(){
+    display: flex;
+    flex-flow: row wrap;
+ }
+ @mixin flexbox-row-no-wrap(){
+    display: flex;
+    flex-flow: row;
+ }
+ @mixin flexbox-column(){
+    display: flex;
+    flex-flow: column wrap;
+ }
+ @mixin align-center {
+    align-items: center;
+ }
+
+*{
+    box-sizing: border-box;
+}
+body {
+    color:rgb(37, 37, 37);
+    font-family: $second_font;
+    width: 100%;
+    margin: 0 auto;
+    min-width: 320px;
+}
+h1,h2 {
+    font-family: $main_font;
+    font-size: 1.40em;
+}
+h1{
+    padding: 10px 0;
+    margin: 0 auto;
+}
+h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.underline::first-letter{
+    text-decoration: solid;
+    text-decoration-color: $third_color;
+}
+
+nav {
+    position: relative;
+    @include flexbox-row();
+    margin: 0 auto;
+    a {
+        text-decoration: none;
+    }
+    h1{
+        text-align: center;
+    }
+    i{
+        cursor: pointer;
+        position:absolute;
+        top: 18px;
+        left: 10px;
+    }
+}
+
+.en-tete-image{
+    position: relative;
+    width: 100%;
+    figure {
+        padding: 0;
+        margin: 0;
+        img {
+            z-index: 9999;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }  
+}
+
+main {
+    padding-bottom:30px;
+    position: relative;
+    z-index: 1;
+    margin: -50px auto auto auto;
+    border-radius: 20px 20px 0 0;
+    background-color: rgb(238, 238, 238);
+    .titre {
+        @include flexbox-row();
+        justify-content: space-between;
+        align-items: center;
+        p{
+            position:relative;
+            width: 20px;
+        }
+        /*On leur définit un espace allouée et une position absolute pour qu'il soit superposé*/
+        .remplir, .remplir-hover {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+        /*COEUR CREUX*/
+        .remplir {
+            transition:opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        .remplir:hover {
+            opacity: 0;
+        }
+        /*COEUR REMPLI*/
+        .remplir-hover{
+            background: -moz-linear-gradient(-15deg, $primary_color 25%, $second_color );
+            background: -webkit-linear-gradient(-15deg, $primary_color 25%, $second_color );
+            background: linear-gradient(-15deg, $primary_color 25%, $second_color );
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transition:opacity 0.5s ease-in-out;          
+        }
+        .remplir-hover:hover{
+            opacity: 1;
+        }
+        
+    }
+    section {
+        margin: 0 auto;
+        width: 90%; 
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px; 
+        .soulign{
+            border-bottom: 3px solid $third_color;
+            padding-bottom: 4px;
+        } 
+
+        // Carte restaurant 
+        .list-plate{
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 70px;
+            box-sizing: border-box;
+            cursor: pointer;
+            .list-plate__desc{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                transition: all 800ms ease-in;
+            }
+            .list-plate__titre{
+                white-space: nowrap;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                overflow: hidden;
+                padding: 10px;
+                p {
+                    max-width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 0.93rem;
+                    font-weight: 300;
+                    margin: 0;
+                }
+                .titre-plat{
+                    font-size: 1.15em;
+                    font-weight: 600;
+                    margin: 0;
+                }
+            }
+            .price{
+                display: flex;
+                align-items:flex-end;
+                font-weight: 600;
+                padding-right: 10px;
+                
+            }
+            .add-cart {
+                width: 0;
+                overflow: hidden;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #99e2d0;
+                opacity: 0;
+                transition: all 800ms ease-in;
+                i{
+                    transition: transform 0.6s ease-in;
+                    color: white;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .list-plate:hover{
+            .add-cart {
+                width: 25%;
+                opacity: 1;
+                i{
+                    transform: rotate(360deg) scale(1.2);
+                }
+            }
+            .list-plate__desc{
+                width:75%;
+            }
+        }
+
+    .menu-restaurant-box{
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-commander {
+            @include box-shadow2();
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            padding: 11px 22px;
+            background-image: linear-gradient(-15deg, $primary_color 35%, $second_color);
+            color:white;   
+            border-radius: 30px;
+            border: none; 
+            cursor: pointer;
+            text-decoration: none;
+    }
+    .menu-commander:hover {
+        opacity: 0.9;
+        @include box-shadow-noir();
+    }
+    }
+}
+
+footer {
+    background-color: rgb(39, 32, 32);
+    color:white;
+    margin: auto;
+    p, ul {
+        width: 80%;
+        margin: auto;
+        padding-bottom: 15px;
+    }
+    p {
+        font-family: $main_font;
+        padding-top: 15px;        
+    }
+
+    ul {
+        list-style: none;
+        margin-inline-start: 0;
+        line-height: 1.5em;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .en-tete-image figure img {
+        height: 300px;
+    }
+
+    main section {
+        @include flexbox-row();
+        justify-content: space-between;
+        gap: 20px;
+
+        .list-plate{
+            width: 48%;
+        }
+   
+        h3 {
+            width:100%;
+        }
+        .menu-restaurant-box{
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+        }
+        .titre {
+            width:100%;
+        }
+
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        max-width: 1400px;
+    }
+    .en-tete-image figure img {
+        height: 400px;
+    }
+
+    main section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        column-gap: 30px;
+      
+        .list-plate{
+            width: 30%;
+        }
+
+        h3 {
+            width:100%;
+        }
+        .menu-restaurant-box{
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+        }
+        .titre {
+            width:100%;
+        }
+        
+    }
+}
+
