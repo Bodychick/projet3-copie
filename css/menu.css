@@ -40,6 +40,7 @@ nav {
 }
 nav a {
   text-decoration: none;
+  color: black;
 }
 nav h1 {
   text-align: center;
@@ -135,6 +136,23 @@ main section .list-plate {
   height: 70px;
   box-sizing: border-box;
   cursor: pointer;
+  animation: slide-in-bottom 1s ease-in-out;
+  /* ----------------------------------------------
+  /**
+  * ----------------------------------------
+  * animation slide-in-bottom
+  * ----------------------------------------
+  */
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 main section .list-plate .list-plate__desc {
   display: flex;
@@ -168,7 +186,7 @@ main section .list-plate .price {
   display: flex;
   align-items: flex-end;
   font-weight: 600;
-  padding-right: 10px;
+  padding-right: 15px;
 }
 main section .list-plate .add-cart {
   width: 0;
