@@ -180,8 +180,9 @@ ol i {
   background-color: rgba(229, 229, 229, 0.7411764706);
   display: flex;
   flex-flow: column wrap;
-  gap: 10px;
   padding-bottom: 40px;
+  justify-content: space-evenly;
+  row-gap: 30px;
 }
 .restaurant .top-right {
   position: absolute;
@@ -193,9 +194,16 @@ ol i {
   font-size: 16px;
   z-index: 2;
 }
-.restaurant figure, .restaurant h2 {
-  width: 90%;
+.restaurant h2 {
   margin: 15px auto auto auto;
+}
+.restaurant a, .restaurant h2 {
+  width: 90%;
+}
+.restaurant a {
+  text-decoration: none;
+  color: rgb(43, 43, 43);
+  margin: 0 auto;
 }
 .restaurant figure {
   position: relative;
@@ -205,10 +213,7 @@ ol i {
   border-radius: 15px;
   background-color: white;
   cursor: pointer;
-}
-.restaurant figure a {
-  text-decoration: none;
-  color: rgb(43, 43, 43);
+  margin: 0 auto;
 }
 .restaurant img {
   height: 130px;
@@ -278,6 +283,10 @@ footer {
   color: white;
   margin: auto;
 }
+footer a {
+  color: white;
+  text-decoration: none;
+}
 footer p, footer ul {
   width: 80%;
   margin: auto;
@@ -318,10 +327,10 @@ footer ul {
     margin-left: 40px;
     width: 100%;
   }
-  .restaurant figure {
+  .restaurant a {
     width: 45%;
   }
-  .restaurant figure img {
+  .restaurant a img {
     height: 170px;
   }
 }
@@ -347,10 +356,10 @@ footer ul {
     margin-left: 40px;
     width: 100%;
   }
-  .restaurant figure {
+  .restaurant a {
     width: 45%;
   }
-  .restaurant figure img {
+  .restaurant a img {
     height: 200px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -241,6 +241,10 @@ footer {
   color: white;
   margin: auto;
 }
+footer a {
+  color: white;
+  text-decoration: none;
+}
 footer p, footer ul {
   width: 80%;
   margin: auto;
