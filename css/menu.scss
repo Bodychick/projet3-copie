@@ -148,7 +148,7 @@ main {
     }
     section {
         margin: 0 auto;
-        width: 90%; 
+        width: 93%; 
         display: flex;
         flex-direction: column;
         row-gap: 20px; 
@@ -159,7 +159,7 @@ main {
 
         // Carte restaurant 
         .list-plate{
-            padding-left: 10px;
+            padding-left: 7px;
             display: flex;
             justify-content: space-between;
             background-color: white;
@@ -212,18 +212,18 @@ main {
                 flex-direction: column;
                 justify-content: space-evenly;
                 overflow: hidden;
-                padding: 10px;
+                padding: 5px 0px;
                 p {
                     max-width: 100%;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    font-size: 0.93rem;
+                    font-size: 0.70rem;
                     font-weight: 300;
                     margin: 0;
                 }
                 .titre-plat{
-                    font-size: 1.15em;
+                    font-size: 1.05em;
                     font-weight: 600;
                     margin: 0;
                 }
@@ -232,7 +232,7 @@ main {
                 display: flex;
                 align-items:flex-end;
                 font-weight: 600;
-                padding-right: 15px;
+                padding-right: 7px;
                 
             }
             .add-cart {
@@ -295,6 +295,9 @@ footer {
     background-color: rgb(39, 32, 32);
     color:white;
     margin: auto;
+    i{
+        width: 1.2em;
+    }
     a{
         color:white;
         text-decoration: none;
@@ -314,6 +317,7 @@ footer {
         margin-inline-start: 0;
         line-height: 1.5em;
     }
+    
 
 }
 
@@ -330,6 +334,9 @@ footer {
 
         .list-plate{
             width: 48%;
+            .list-plate__titre p {
+                font-size: 0.83em;
+            }
         }
    
         h3 {
@@ -363,6 +370,9 @@ footer {
       
         .list-plate{
             width: 30%;
+            .list-plate__titre p {
+                font-size: 0.86em;
+            }
         }
 
         h3 {

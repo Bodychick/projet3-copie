@@ -50,7 +50,7 @@ body {
   margin: 0 auto;
 }
 
-h1, h2 {
+h1 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.4em;
 }
@@ -72,7 +72,7 @@ header, .presentation {
   margin: 0 auto;
 }
 
-nav {
+titre-larg-max {
   width: 100%;
   background-color: white;
   box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
@@ -142,7 +142,7 @@ ol {
           padding-inline-start: 0px;
 }
 ol li {
-  text-align: center;
+  text-align: left;
   box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
   padding: 20px 15px;
   margin-bottom: 15px;
@@ -165,13 +165,14 @@ ol li::before {
   font-size: 1.2rem;
   padding: 2px 8px;
 }
-ol li:hover {
+ol .important {
   background-color: #f5edff;
 }
-ol li:hover i {
-  color: #9356DC;
+ol .important i {
+  color: #9356DC !important;
 }
 ol i {
+  margin-left: 30px;
   margin-right: 15px;
   color: grey;
 }
@@ -283,6 +284,9 @@ footer {
   color: white;
   margin: auto;
 }
+footer i {
+  width: 1.2em;
+}
 footer a {
   color: white;
   text-decoration: none;
@@ -313,11 +317,15 @@ footer ul {
     align-items: center;
   }
   .fonctionnement ol li {
-    width: 25%;
     box-sizing: border-box;
   }
   .fonctionnement ol li::before {
     top: 30%;
+  }
+  .fonctionnement ol i {
+    margin-left: 14px;
+    margin-right: 15px;
+    color: grey;
   }
   .restaurant {
     display: flex;
@@ -347,6 +355,11 @@ footer ul {
   }
   .fonctionnement ol li {
     width: 25%;
+  }
+  .fonctionnement ol i {
+    margin-left: 14px;
+    margin-right: 15px;
+    color: grey;
   }
   .restaurant {
     display: flex;
